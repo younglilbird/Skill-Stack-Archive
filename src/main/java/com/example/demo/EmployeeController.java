@@ -15,7 +15,6 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-    //private final EmployeeRepository repository;
     @Autowired
     private DataLoaderService dataservice;
 
@@ -58,48 +57,4 @@ public class EmployeeController {
     public @ResponseBody void deleteEmployeeByName(@PathVariable String name) {
         dataservice.deleteEmployeeByName(name);
     }
-
-
-    // Aggregate root
-    // tag::get-aggregate-root[]
-//    @GetMapping("/employees")
-//    List<Employee> all() {
-//        return Service.findAllStates();
-//    }
-
-    // end::get-aggregate-root[]
-
-//    @PostMapping("/employees")
-//    Employee newEmployee(@RequestBody Employee newEmployee) {
-//        return repository.save(newEmployee);
-//    }
-//
-//    // Single item
-//
-//    @GetMapping("/employees/{id}")
-//    Employee one(@PathVariable Long id) {
-//
-//        return repository.findById(id)
-//                .orElseThrow(() -> new EmployeeNotFoundException(id));
-//    }
-
-//    @PutMapping("/employees/{id}")
-//    Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
-//
-//        return repository.findById(id)
-//                .map(employee -> {
-//                    employee.setName(newEmployee.getName());
-//                    employee.setRole(newEmployee.getRole());
-//                    return repository.save(employee);
-//                })
-//                .orElseGet(() -> {
-//                    newEmployee.setId(id);
-//                    return repository.save(newEmployee);
-//                });
-//    }
-//
-//    @DeleteMapping("/employees/{id}")
-//    void deleteEmployee(@PathVariable Long id) {
-//        repository.deleteById(id);
-//    }
 }

@@ -13,11 +13,6 @@ import lombok.Data;
 @Builder
 public class Employee {
 
-//    @Id
-//    @GeneratedValue
-//    @Id
-//    @GeneratedValue
-
     private String name;
     private String role;
     private int id;
@@ -28,11 +23,6 @@ public class Employee {
         this.role = role;
         this.id = id;
     }
-
-//    public Employee() {
-//
-//    }
-
 
     public int getId() {
         return this.id;
@@ -57,26 +47,26 @@ public class Employee {
     public void setRole(String role) {
         this.role = role;
     }
-//
-//    @Override
-//    public boolean equals(Object o) {
-//
-//        if (this == o)
-//            return true;
-//        if (!(o instanceof Employee))
-//            return false;
-//        Employee employee = (Employee) o;
-//        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name)
-//                && Objects.equals(this.role, employee.role);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(this.id, this.name, this.role);
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Employee{" + "id=" + this.id + ", name='" + this.name + '\'' + ", role='" + this.role + '\'' + '}';
-//    }
+
+   @Override
+   public boolean equals(Object o) {
+
+       if (this == o)
+           return true;
+       if (!(o instanceof Employee))
+           return false;
+       Employee employee = (Employee) o;
+       return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name)
+               && Objects.equals(this.role, employee.role);
+   }
+
+   @Override
+   public int hashCode() {
+       return Objects.hash(this.id, this.name, this.role);
+   }
+
+   @Override
+   public String toString() {
+       return "Employee{" + "id=" + this.id + ", name='" + this.name + '\'' + ", role='" + this.role + '\'' + '}';
+   }
 }

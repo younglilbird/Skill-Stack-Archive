@@ -24,6 +24,10 @@ public class Employee {
         this.id = id;
     }
 
+    public Employee() {
+
+    }
+
     public int getId() {
         return this.id;
     }

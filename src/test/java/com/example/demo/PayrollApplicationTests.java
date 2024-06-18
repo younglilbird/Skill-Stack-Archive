@@ -14,4 +14,20 @@ class PayrollApplicationTests {
 		assertEquals(0, id);
 	}
 
+	@Test
+	void testName() {
+		Employee employee = new Employee();
+		String name = "John Doe";
+		employee.setName(name);
+		assertEquals(name, employee.getName());
+	}
+
+	@Test
+	void testRole() {
+		Employee employee = new Employee();
+		String role = "Student";
+		employee.setRole(role);
+		assertEquals(role, employee.getRole());
+	}
+
 }
